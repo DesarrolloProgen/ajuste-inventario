@@ -1,0 +1,1 @@
+import{X as t,pc as r,qa as e}from"./chunk-Z3A7YN5H.js";var n=class a{contador=e(0);cargando=r(()=>this.contador()>0);iniciar(){this.contador.update(o=>o+1)}detener(){this.contador.update(o=>Math.max(0,o-1))}static \u0275fac=function(d){return new(d||a)};static \u0275prov=t({token:a,factory:a.\u0275fac,providedIn:"root"})};export{n as a};
