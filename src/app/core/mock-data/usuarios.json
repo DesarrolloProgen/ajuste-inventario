@@ -1,0 +1,52 @@
+[
+  {
+    "nivel": "Gerencia",
+    "nombre": "Willton Preciado",
+    "correo": "Contralor@progen.com.co"
+  },
+  {
+    "nivel": "Gerencia",
+    "nombre": "Alberto Castaño",
+    "correo": "operaciones.gerente@progen.com.co"
+  },
+  {
+    "nivel": "Gerencia",
+    "nombre": "Claudia Gómez",
+    "correo": "logistica.gerente@progen.com.co"
+  },
+  {
+    "nivel": "Gerencia",
+    "nombre": "Miguel Ángel Ordoñez",
+    "correo": "Tic.Gerente@progen.com.co"
+  },
+  {
+    "nivel": "Almacen",
+    "nombre": "Edgar Sanchez",
+    "correo": "Almacen.Jefe@progen.com.co"
+  },
+  {
+    "nivel": "Almacen",
+    "nombre": "Jhon Fredy Rodriguez",
+    "correo": "almacen.plasticos@progen.com.co"
+  },
+  {
+    "nivel": "Almacen",
+    "nombre": "Daniel Rippe Castro",
+    "correo": "almacen.terminado@progen.com.co"
+  },
+  {
+    "nivel": "Almacen",
+    "nombre": "Andres Camilo Aldana",
+    "correo": "almacen.motorizados@progen.com.co"
+  },
+  {
+    "nivel": "Almacen",
+    "nombre": "Alvaro Andres Holguin Castañeda",
+    "correo": "almacen.partes@progen.com.co"
+  },
+  {
+    "nivel": "Almacen",
+    "nombre": "Hernan Dario Nivia Hernandez",
+    "correo": "almacen.suministros@progen.com.co"
+  }
+]

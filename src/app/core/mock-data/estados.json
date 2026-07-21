@@ -1,0 +1,5 @@
+[
+  { "valor": "Pendiente", "etiqueta": "Pendiente", "claseCss": "estado-pendiente", "orden": 0 },
+  { "valor": "Aprobado", "etiqueta": "Aprobado", "claseCss": "estado-aprobado", "orden": 1 },
+  { "valor": "Rechazado", "etiqueta": "Rechazado", "claseCss": "estado-rechazado", "orden": 2 }
+]

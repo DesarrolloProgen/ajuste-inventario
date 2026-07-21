@@ -1,0 +1,156 @@
+<div class="encabezado-pagina">
+  <div>
+    <h1>Solicitud de ajuste de inventario</h1>
+  </div>
+  <a mat-button routerLink="/solicitudes">
+    <mat-icon>arrow_back</mat-icon>
+    Volver a la bandeja
+  </a>
+</div>
+
+<form [formGroup]="form" class="formulario-solicitud">
+  <mat-card class="seccion">
+    <h2>Información general</h2>
+    <div class="grid-encabezado">
+      <mat-form-field appearance="outline">
+        <mat-label>Solicitante</mat-label>
+        <input matInput formControlName="solicitante" />
+        @if (form.controls.solicitante.invalid && form.controls.solicitante.touched) {
+          <mat-error>El solicitante es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fecha</mat-label>
+        <input matInput type="date" formControlName="fecha" />
+        @if (form.controls.fecha.invalid && form.controls.fecha.touched) {
+          <mat-error>La fecha es obligatoria.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Línea comercial</mat-label>
+        <input matInput formControlName="lineaComercial" placeholder="Ej. Fumigadoras" />
+        @if (form.controls.lineaComercial.invalid && form.controls.lineaComercial.touched) {
+          <mat-error>La línea comercial es obligatoria.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Aprobador Gerencia</mat-label>
+        <mat-select formControlName="aprobadorGerencia">
+          @for (usuario of aprobadoresGerencia(); track usuario.correo) {
+            <mat-option [value]="usuario.nombre">{{ usuario.nombre }}</mat-option>
+          }
+        </mat-select>
+        @if (form.controls.aprobadorGerencia.invalid && form.controls.aprobadorGerencia.touched) {
+          <mat-error>Seleccione quién aprobará por Gerencia.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Aprobador Almacén</mat-label>
+        <mat-select formControlName="aprobadorAlmacen">
+          @for (usuario of aprobadoresAlmacen(); track usuario.correo) {
+            <mat-option [value]="usuario.nombre">{{ usuario.nombre }}</mat-option>
+          }
+        </mat-select>
+        @if (form.controls.aprobadorAlmacen.invalid && form.controls.aprobadorAlmacen.touched) {
+          <mat-error>Seleccione quién aprobará por Almacén.</mat-error>
+        }
+      </mat-form-field>
+    </div>
+  </mat-card>
+
+  <mat-card class="seccion">
+    <div class="encabezado-seccion">
+      <h2>Detalle de productos</h2>
+      <button mat-stroked-button type="button" color="primary" (click)="agregarItem()">
+        <mat-icon>add</mat-icon>
+        Agregar producto
+      </button>
+    </div>
+
+    @if (items.length === 0) {
+      <p class="vacio">Agregue al menos un producto a la solicitud.</p>
+    }
+
+    @for (item of items.controls; track item; let i = $index) {
+      <div class="fila-item" [formGroup]="item">
+        <div class="columna-referencia">
+          <app-producto-selector
+            [valorInicial]="item.controls.codigoReferencia.value"
+            (seleccionado)="onProductoSeleccionado(i, $event)"
+          />
+          @if (item.controls.codigoReferencia.invalid && item.controls.codigoReferencia.touched) {
+            <div class="error-manual">La referencia es obligatoria.</div>
+          }
+        </div>
+
+        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="columna-descripcion">
+          <mat-label>Descripción</mat-label>
+          <input matInput formControlName="descripcion" readonly />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="columna-bodega">
+          <mat-label>Bodega</mat-label>
+          <mat-select formControlName="bodega">
+            @for (bodega of bodegas(); track bodega.codigo) {
+              <mat-option [value]="bodega.codigo">{{ bodega.codigo }} — {{ bodega.descripcion }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="columna-numero">
+          <mat-label>Cantidad</mat-label>
+          <input matInput type="number" formControlName="cantidad" />
+          @if (item.controls.cantidad.invalid && item.controls.cantidad.touched) {
+            <mat-error>La cantidad no puede ser cero.</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="columna-numero">
+          <mat-label>Costo unitario</mat-label>
+          <input matInput type="number" min="0" formControlName="costoUnitario" />
+        </mat-form-field>
+
+        <div class="columna-total">
+          <span class="etiqueta-total">Total línea</span>
+          <span class="valor-total">{{ costoTotalFila(item) | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</span>
+        </div>
+
+        <button
+          mat-icon-button
+          type="button"
+          matTooltip="Eliminar producto"
+          [disabled]="items.length <= 1"
+          (click)="eliminarItem(i)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    }
+  </mat-card>
+
+  <mat-card class="seccion">
+    <h2>Observaciones</h2>
+    <mat-form-field appearance="outline" class="full-width" subscriptSizing="dynamic">
+      <textarea matInput rows="3" formControlName="observaciones"></textarea>
+    </mat-form-field>
+  </mat-card>
+
+  <mat-card class="seccion resumen">
+    <h2>Resumen de totales</h2>
+    <div class="total-general">
+      <span>Total general</span>
+      <strong>{{ totalGeneral() | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</strong>
+    </div>
+  </mat-card>
+
+  <div class="acciones-formulario">
+    <button mat-button type="button" (click)="cancelar()">Cancelar</button>
+    <button mat-flat-button type="button" color="primary" [disabled]="enviando()" (click)="enviarSolicitud()">
+      Enviar solicitud
+    </button>
+  </div>
+</form>

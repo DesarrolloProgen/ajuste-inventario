@@ -1,0 +1,402 @@
+[
+  {
+    "codigo": "001",
+    "descripcion": "BODEGA - PLN. METALMECANICA",
+    "activo": true
+  },
+  {
+    "codigo": "002",
+    "descripcion": "BODEGA - PLN. PLASTICOS",
+    "activo": true
+  },
+  {
+    "codigo": "003",
+    "descripcion": "BODEGA - MP. PLASTICOS",
+    "activo": true
+  },
+  {
+    "codigo": "004",
+    "descripcion": "BODEGA - PRODUCCION - MOTORIZADOS",
+    "activo": true
+  },
+  {
+    "codigo": "005",
+    "descripcion": "BODEGA - MAQUILA",
+    "activo": true
+  },
+  {
+    "codigo": "006",
+    "descripcion": "BODEGA - MAQUILA - RESORTECNICA",
+    "activo": true
+  },
+  {
+    "codigo": "007",
+    "descripcion": "BODEGA - MAQUILA - PROMEVEL",
+    "activo": true
+  },
+  {
+    "codigo": "008",
+    "descripcion": "BODEGA - MAQUILA - GOOD CLEAN",
+    "activo": true
+  },
+  {
+    "codigo": "009",
+    "descripcion": "BODEGA - MAQUILA - D&F DISEÑOS Y FABRICACION S.A.S",
+    "activo": true
+  },
+  {
+    "codigo": "010",
+    "descripcion": "BODEGA - MÉXICO",
+    "activo": true
+  },
+  {
+    "codigo": "011",
+    "descripcion": "PUERTO LOPEZ - DRONES",
+    "activo": true
+  },
+  {
+    "codigo": "050",
+    "descripcion": "BODEGA - CALIDAD - CUARENTENA PRODUCCION",
+    "activo": true
+  },
+  {
+    "codigo": "091",
+    "descripcion": "BODEGA - NO CONFORME - METALMECANICA",
+    "activo": true
+  },
+  {
+    "codigo": "092",
+    "descripcion": "BODEGA - NO CONFORME - PLASTICOS",
+    "activo": true
+  },
+  {
+    "codigo": "093",
+    "descripcion": "BODEGA - RECUPERACION EXTERNA - METALMECANICA",
+    "activo": true
+  },
+  {
+    "codigo": "094",
+    "descripcion": "BODEGA - RECUPERACION EXTERNA - PLASTICOS",
+    "activo": true
+  },
+  {
+    "codigo": "095",
+    "descripcion": "BODEGA - DEVOLUCIONES - TALLER DE SERVICIO",
+    "activo": true
+  },
+  {
+    "codigo": "097",
+    "descripcion": "BODEGA - INVENTARIO EN TRANSITO - IMPORTACIONES",
+    "activo": true
+  },
+  {
+    "codigo": "098",
+    "descripcion": "BODEGA - CALIDAD - CUARENTENA COMPRAS",
+    "activo": true
+  },
+  {
+    "codigo": "099",
+    "descripcion": "BODEGA - NO CONFORME COMPRADO - METALMECANICA",
+    "activo": true
+  },
+  {
+    "codigo": "09A",
+    "descripcion": "BODEGA - NO CONFORME COMPRADO - PLASTICOS",
+    "activo": true
+  },
+  {
+    "codigo": "E01",
+    "descripcion": "BODEGA - PARTES MOTORIZADOS EXPORTACIÓN",
+    "activo": true
+  },
+  {
+    "codigo": "M01",
+    "descripcion": "BODEGA - INNOVACIÓN",
+    "activo": true
+  },
+  {
+    "codigo": "M02",
+    "descripcion": "BODEGA - INSTRUMENTACIÓN",
+    "activo": true
+  },
+  {
+    "codigo": "M03",
+    "descripcion": "BODEGA - GRUPO EXTERNO DE CALIDAD GEC",
+    "activo": true
+  },
+  {
+    "codigo": "M04",
+    "descripcion": "BODEGA - SERVICIOS GENERALES",
+    "activo": true
+  },
+  {
+    "codigo": "M05",
+    "descripcion": "BODEGA - EXHIBICION",
+    "activo": true
+  },
+  {
+    "codigo": "M06",
+    "descripcion": "BODEGA - MERCANCIA EN CONSIGNACIÓN",
+    "activo": true
+  },
+  {
+    "codigo": "M07",
+    "descripcion": "BODEGA - MUESTRAS",
+    "activo": true
+  },
+  {
+    "codigo": "M08",
+    "descripcion": "BODEGA - EQUIPOS DESENSAMBLADOS",
+    "activo": true
+  },
+  {
+    "codigo": "M09",
+    "descripcion": "BODEGA - FERIAS",
+    "activo": true
+  },
+  {
+    "codigo": "M10",
+    "descripcion": "BODEGA - CINTAS SENALES VIALES",
+    "activo": true
+  },
+  {
+    "codigo": "M11",
+    "descripcion": "BODEGA - MAQUINAS TESTIGO",
+    "activo": true
+  },
+  {
+    "codigo": "M13",
+    "descripcion": "BODEGA - SENALIZACION PINTURA",
+    "activo": true
+  },
+  {
+    "codigo": "M14",
+    "descripcion": "BODEGA - PUBLICIDAD FUMIGADORAS",
+    "activo": true
+  },
+  {
+    "codigo": "M15",
+    "descripcion": "BODEGA - PUBLICIDAD VENTAS INTERNACIONALES",
+    "activo": true
+  },
+  {
+    "codigo": "M16",
+    "descripcion": "BODEGA - LOGISTICA",
+    "activo": true
+  },
+  {
+    "codigo": "M17",
+    "descripcion": "BODEGA - COMUNICACIONES",
+    "activo": true
+  },
+  {
+    "codigo": "M99",
+    "descripcion": "BODEGA - MERCANCIA EN TRANSITO - EXPORTACIONES",
+    "activo": true
+  },
+  {
+    "codigo": "P01",
+    "descripcion": "NO USAR - ERROR",
+    "activo": true
+  },
+  {
+    "codigo": "P02",
+    "descripcion": "NO USAR - ERROR",
+    "activo": true
+  },
+  {
+    "codigo": "P03",
+    "descripcion": "BODEGA - EQUIPOS MOTORIZADOS",
+    "activo": true
+  },
+  {
+    "codigo": "P04",
+    "descripcion": "BODEGA - MANTENIMIENTO",
+    "activo": true
+  },
+  {
+    "codigo": "P06",
+    "descripcion": "BODEGA - TALLER DE SERVICIO INTERNO",
+    "activo": true
+  },
+  {
+    "codigo": "R01",
+    "descripcion": "NP REPUESTOS GENUINE MAQUILA",
+    "activo": true
+  },
+  {
+    "codigo": "R02",
+    "descripcion": "RESORTECNICA S.A.S. MAQUILA",
+    "activo": true
+  },
+  {
+    "codigo": "R03",
+    "descripcion": "PROMEVEL MAQUILA",
+    "activo": true
+  },
+  {
+    "codigo": "R04",
+    "descripcion": "GOOD CLEAN MAQUILA",
+    "activo": true
+  },
+  {
+    "codigo": "S01",
+    "descripcion": "BODEGA - PY.SENAL - VÍA 40 EXPRESS BOGOTA-GIRARDOT",
+    "activo": true
+  },
+  {
+    "codigo": "S02",
+    "descripcion": "BODEGA - PY.SENAL - MARIO HUERTAS BOGOTA",
+    "activo": true
+  },
+  {
+    "codigo": "S03",
+    "descripcion": "BODEGA - SENALES ARG AGUACHICA",
+    "activo": true
+  },
+  {
+    "codigo": "S04",
+    "descripcion": "BODEGA - COVIORIENTE",
+    "activo": true
+  },
+  {
+    "codigo": "S05",
+    "descripcion": "BODEGA - PY.SENAL - AUTOVIA NEIVA GIRARDOT",
+    "activo": true
+  },
+  {
+    "codigo": "S06",
+    "descripcion": "BODEGA - CONSORCIO SEÑALIZAR BOGOTA",
+    "activo": true
+  },
+  {
+    "codigo": "S07",
+    "descripcion": "BODEGA - CP3 PACIFICO TRES",
+    "activo": true
+  },
+  {
+    "codigo": "S08",
+    "descripcion": "BODEGA - CONDOR PITALITO",
+    "activo": true
+  },
+  {
+    "codigo": "S09",
+    "descripcion": "BODEGA - PY.SENAL - MAGDALENA MEDIO",
+    "activo": true
+  },
+  {
+    "codigo": "S10",
+    "descripcion": "BODEGA - PY.SENAL - MAGANGUE",
+    "activo": true
+  },
+  {
+    "codigo": "V01",
+    "descripcion": "BODEGA - RRV - ALEX QUIROZ",
+    "activo": true
+  },
+  {
+    "codigo": "V02",
+    "descripcion": "BODEGA - RRV - DANIEL MORA",
+    "activo": true
+  },
+  {
+    "codigo": "V03",
+    "descripcion": "BODEGA - RRV - STEVEN CASSO",
+    "activo": true
+  },
+  {
+    "codigo": "V04",
+    "descripcion": "BODEGA - RRV - RICARDO ARIAS",
+    "activo": true
+  },
+  {
+    "codigo": "V05",
+    "descripcion": "BODEGA - RRV - JOSE VARGAS",
+    "activo": true
+  },
+  {
+    "codigo": "V06",
+    "descripcion": "BODEGA - RRV - EVER MENDOZA",
+    "activo": true
+  },
+  {
+    "codigo": "V07",
+    "descripcion": "BODEGA - RRV - MAURICIO POSADA",
+    "activo": true
+  },
+  {
+    "codigo": "V08",
+    "descripcion": "BODEGA - RRV - CAROLA PERDOMO",
+    "activo": true
+  },
+  {
+    "codigo": "V09",
+    "descripcion": "BODEGA - RRV - JERSONN CAMARGO",
+    "activo": true
+  },
+  {
+    "codigo": "V10",
+    "descripcion": "BODEGA - GRN - DAVID CASTRO",
+    "activo": true
+  },
+  {
+    "codigo": "V11",
+    "descripcion": "BODEGA - RRV - JUAN ROBERTO PINZON",
+    "activo": true
+  },
+  {
+    "codigo": "V12",
+    "descripcion": "BODEGA - RRV - FREDY RUBIANO",
+    "activo": true
+  },
+  {
+    "codigo": "V13",
+    "descripcion": "BODEGA - RRV - DIEGO RAMIREZ",
+    "activo": true
+  },
+  {
+    "codigo": "V14",
+    "descripcion": "BODEGA - RRV - WILMAR BUITRAGO",
+    "activo": true
+  },
+  {
+    "codigo": "V15",
+    "descripcion": "BODEGA - RRV - RICARDO SARMIENTO",
+    "activo": true
+  },
+  {
+    "codigo": "V16",
+    "descripcion": "BODEGA - RRV - TECNICAS DE APLICACION",
+    "activo": true
+  },
+  {
+    "codigo": "V17",
+    "descripcion": "BODEGA - RRV - FRANKLIN GILÓN",
+    "activo": true
+  },
+  {
+    "codigo": "V18",
+    "descripcion": "BODEGA - PMT -  CRUZ MENDOZA DANIEL JOSE",
+    "activo": true
+  },
+  {
+    "codigo": "V19",
+    "descripcion": "BODEGA - PMT - MAYA   SERNA CRISTIAN  CAMILO",
+    "activo": true
+  },
+  {
+    "codigo": "V20",
+    "descripcion": "BODEGA - PMT -  CAMAYO   SANCHEZ RONALD  STIVEN",
+    "activo": true
+  },
+  {
+    "codigo": "V21",
+    "descripcion": "BODEGA - PMT -  SANCHEZ POSADA JHONNY  ALEXANDER",
+    "activo": true
+  },
+  {
+    "codigo": "V22",
+    "descripcion": "BODEGA - PMT - PANTOJA  ROSERO JEISSON  NIVALDO",
+    "activo": true
+  }
+]

@@ -1,0 +1,102 @@
+@if (solicitud(); as s) {
+  <div class="encabezado-pagina">
+    <div class="titulo-encabezado">
+      <h1>{{ s.numero }}</h1>
+      <app-estado-badge [estado]="s.estado" />
+    </div>
+    <div class="acciones-encabezado">
+      <button mat-stroked-button (click)="generarPdf(s)">
+        <mat-icon>picture_as_pdf</mat-icon>
+        Generar PDF
+      </button>
+      <button mat-stroked-button (click)="abrirGenerarExcel(s)">
+        <mat-icon>table_view</mat-icon>
+        Generar Excel
+      </button>
+      <a mat-button routerLink="/solicitudes">
+        <mat-icon>arrow_back</mat-icon>
+        Volver
+      </a>
+    </div>
+  </div>
+
+  <mat-card class="seccion">
+    <h2>Información general</h2>
+    <div class="grid-info">
+      <div>
+        <span class="etiqueta">Solicitante</span>
+        <span>{{ s.solicitante }}</span>
+      </div>
+      <div>
+        <span class="etiqueta">Fecha</span>
+        <span>{{ s.fecha }}</span>
+      </div>
+      <div>
+        <span class="etiqueta">Línea comercial</span>
+        <span>{{ s.lineaComercial }}</span>
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card class="seccion">
+    <h2>Detalle de productos</h2>
+    <table mat-table [dataSource]="s.items" class="tabla">
+      <ng-container matColumnDef="codigoReferencia">
+        <th mat-header-cell *matHeaderCellDef>Referencia</th>
+        <td mat-cell *matCellDef="let it">{{ it.codigoReferencia }}</td>
+      </ng-container>
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef>Descripción</th>
+        <td mat-cell *matCellDef="let it">{{ it.descripcion }}</td>
+      </ng-container>
+      <ng-container matColumnDef="bodega">
+        <th mat-header-cell *matHeaderCellDef>Bodega</th>
+        <td mat-cell *matCellDef="let it">{{ it.bodega }}</td>
+      </ng-container>
+      <ng-container matColumnDef="cantidad">
+        <th mat-header-cell *matHeaderCellDef>Cantidad</th>
+        <td mat-cell *matCellDef="let it">{{ it.cantidad }}</td>
+      </ng-container>
+      <ng-container matColumnDef="costoUnitario">
+        <th mat-header-cell *matHeaderCellDef>Costo unitario</th>
+        <td mat-cell *matCellDef="let it">{{ it.costoUnitario | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</td>
+      </ng-container>
+      <ng-container matColumnDef="costoTotal">
+        <th mat-header-cell *matHeaderCellDef>Costo total</th>
+        <td mat-cell *matCellDef="let it">{{ it.costoTotal | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columnasItems"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnasItems"></tr>
+    </table>
+  </mat-card>
+
+  <mat-card class="seccion">
+    <h2>Observaciones</h2>
+    <p>{{ s.observaciones || 'Sin observaciones.' }}</p>
+  </mat-card>
+
+  <mat-card class="seccion resumen">
+    <h2>Resumen de totales</h2>
+    <div class="total-general">
+      <span>Total general</span>
+      <strong>{{ s.totalGeneral | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</strong>
+    </div>
+  </mat-card>
+
+  <mat-card class="seccion">
+    <h2>Aprobadores asignados</h2>
+    <p class="vacio">La aprobación se gestiona por correo fuera de la aplicación.</p>
+    <div class="grid-info">
+      <div>
+        <span class="etiqueta">Gerencia</span>
+        <span>{{ s.aprobadorGerencia || 'Sin asignar' }}</span>
+        <app-estado-badge [estado]="s.estadoGerencia || 'Pendiente'" />
+      </div>
+      <div>
+        <span class="etiqueta">Almacén</span>
+        <span>{{ s.aprobadorAlmacen || 'Sin asignar' }}</span>
+        <app-estado-badge [estado]="s.estadoAlmacen || 'Pendiente'" />
+      </div>
+    </div>
+  </mat-card>
+}

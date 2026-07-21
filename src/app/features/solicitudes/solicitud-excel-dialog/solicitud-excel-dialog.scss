@@ -1,0 +1,14 @@
+.formulario-excel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  mat-form-field {
+    flex: 1 1 160px;
+  }
+}
+
+.tabla-preview {
+  width: 100%;
+}

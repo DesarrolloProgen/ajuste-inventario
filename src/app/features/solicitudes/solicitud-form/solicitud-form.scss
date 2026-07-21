@@ -1,0 +1,107 @@
+.encabezado-pagina {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.numero {
+  color: rgba(0, 0, 0, 0.6);
+  margin: 4px 0 0;
+}
+
+.formulario-solicitud {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.seccion {
+  padding: 20px;
+}
+
+.seccion h2 {
+  margin-top: 0;
+}
+
+.grid-encabezado {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.encabezado-seccion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.fila-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.columna-referencia {
+  flex: 2 1 240px;
+}
+
+.columna-descripcion {
+  flex: 2 1 220px;
+}
+
+.columna-bodega {
+  flex: 1.6 1 200px;
+}
+
+.columna-numero {
+  flex: 1 1 120px;
+}
+
+.columna-total {
+  flex: 1 1 140px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+}
+
+.etiqueta-total {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.valor-total {
+  font-weight: 600;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.resumen .total-general {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+
+.acciones-formulario {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-bottom: 40px;
+}
+
+.vacio {
+  opacity: 0.7;
+}
+
+.error-manual {
+  font-size: 12px;
+  color: #b71c1c;
+  margin-top: 4px;
+}

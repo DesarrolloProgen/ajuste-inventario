@@ -1,0 +1,39 @@
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 16px 0 32px;
+}
+
+.tarjeta mat-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.valor {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.etiqueta {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 13px;
+}
+
+.encabezado-tabla {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.tabla {
+  width: 100%;
+}
+
+.vacio {
+  opacity: 0.7;
+  padding: 24px 0;
+}

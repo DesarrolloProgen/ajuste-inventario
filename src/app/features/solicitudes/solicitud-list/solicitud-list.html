@@ -1,0 +1,86 @@
+<div class="encabezado">
+  <h1>Bandeja de solicitudes</h1>
+  <a mat-flat-button color="primary" routerLink="/solicitudes/nueva">
+    <mat-icon>add</mat-icon>
+    Nueva solicitud
+  </a>
+</div>
+
+<form [formGroup]="filtros" class="filtros">
+  <mat-form-field appearance="outline" subscriptSizing="dynamic">
+    <mat-label>Estado</mat-label>
+    <mat-select formControlName="estado">
+      <mat-option value="">Todos</mat-option>
+      @for (estado of estadosDisponibles; track estado) {
+        <mat-option [value]="estado">{{ estado }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" subscriptSizing="dynamic">
+    <mat-label>Solicitante</mat-label>
+    <input matInput formControlName="solicitante" placeholder="Nombre del solicitante" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" subscriptSizing="dynamic">
+    <mat-label>Línea comercial</mat-label>
+    <input matInput formControlName="lineaComercial" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" subscriptSizing="dynamic">
+    <mat-label>Fecha</mat-label>
+    <input matInput type="date" formControlName="fecha" />
+  </mat-form-field>
+</form>
+
+@if (solicitudes().length > 0) {
+  <table mat-table [dataSource]="solicitudes()" class="tabla">
+    <ng-container matColumnDef="numero">
+      <th mat-header-cell *matHeaderCellDef>Número</th>
+      <td mat-cell *matCellDef="let s">{{ s.numero }}</td>
+    </ng-container>
+    <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef>Fecha</th>
+      <td mat-cell *matCellDef="let s">{{ s.fecha }}</td>
+    </ng-container>
+    <ng-container matColumnDef="solicitante">
+      <th mat-header-cell *matHeaderCellDef>Solicitante</th>
+      <td mat-cell *matCellDef="let s">{{ s.solicitante }}</td>
+    </ng-container>
+    <ng-container matColumnDef="lineaComercial">
+      <th mat-header-cell *matHeaderCellDef>Línea comercial</th>
+      <td mat-cell *matCellDef="let s">{{ s.lineaComercial }}</td>
+    </ng-container>
+    <ng-container matColumnDef="estado">
+      <th mat-header-cell *matHeaderCellDef>Estado</th>
+      <td mat-cell *matCellDef="let s"><app-estado-badge [estado]="s.estado" /></td>
+    </ng-container>
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef>Total</th>
+      <td mat-cell *matCellDef="let s">{{ s.totalGeneral | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</td>
+    </ng-container>
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let s">
+        <button mat-icon-button matTooltip="Ver" (click)="verSolicitud(s.id)">
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Generar PDF" (click)="generarPdf(s)">
+          <mat-icon>picture_as_pdf</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnas"></tr>
+  </table>
+  @if (hayMas()) {
+    <div class="cargar-mas">
+      <button mat-stroked-button [disabled]="cargandoMas()" (click)="cargarMas()">
+        {{ cargandoMas() ? 'Cargando…' : 'Cargar más' }}
+      </button>
+    </div>
+  }
+} @else {
+  <p class="vacio">No se encontraron solicitudes con los filtros seleccionados.</p>
+}

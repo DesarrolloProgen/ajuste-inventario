@@ -1,0 +1,33 @@
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.filtros mat-form-field {
+  min-width: 200px;
+  flex: 1;
+}
+
+.tabla {
+  width: 100%;
+}
+
+.vacio {
+  opacity: 0.7;
+  padding: 24px 0;
+}
+
+.cargar-mas {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+}

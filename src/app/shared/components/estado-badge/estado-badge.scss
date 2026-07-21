@@ -1,0 +1,33 @@
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.estado-borrador {
+  background: #e0e0e0;
+  color: #424242;
+}
+
+.estado-enviado {
+  background: #bbdefb;
+  color: #0d47a1;
+}
+
+.estado-pendiente {
+  background: #ffe0b2;
+  color: #e65100;
+}
+
+.estado-aprobado {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+.estado-rechazado {
+  background: #ffcdd2;
+  color: #b71c1c;
+}

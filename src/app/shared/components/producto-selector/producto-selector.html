@@ -1,0 +1,15 @@
+<mat-form-field appearance="outline" class="full-width" subscriptSizing="dynamic">
+  <mat-label>Referencia</mat-label>
+  <input
+    type="text"
+    matInput
+    [formControl]="control"
+    [matAutocomplete]="auto"
+    placeholder="Buscar por código o descripción"
+  />
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onSeleccion($event)">
+    @for (producto of opciones(); track producto.codigo) {
+      <mat-option [value]="producto">{{ producto.codigo }} — {{ producto.descripcion }}</mat-option>
+    }
+  </mat-autocomplete>
+</mat-form-field>

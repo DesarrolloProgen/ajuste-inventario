@@ -1,0 +1,76 @@
+<h1>Dashboard</h1>
+
+<div class="tarjetas">
+  <mat-card class="tarjeta">
+    <mat-card-content>
+      <mat-icon>description</mat-icon>
+      <div class="valor">{{ indicadores().creadas }}</div>
+      <div class="etiqueta">Solicitudes creadas</div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="tarjeta">
+    <mat-card-content>
+      <mat-icon>hourglass_top</mat-icon>
+      <div class="valor">{{ indicadores().pendientes }}</div>
+      <div class="etiqueta">Pendientes</div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="tarjeta">
+    <mat-card-content>
+      <mat-icon>check_circle</mat-icon>
+      <div class="valor">{{ indicadores().aprobadas }}</div>
+      <div class="etiqueta">Aprobadas</div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="tarjeta">
+    <mat-card-content>
+      <mat-icon>cancel</mat-icon>
+      <div class="valor">{{ indicadores().rechazadas }}</div>
+      <div class="etiqueta">Rechazadas</div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="encabezado-tabla">
+  <h2>Últimas solicitudes</h2>
+  <a mat-flat-button color="primary" routerLink="/solicitudes/nueva">
+    <mat-icon>add</mat-icon>
+    Nueva solicitud
+  </a>
+</div>
+
+@if (ultimasSolicitudes().length > 0) {
+  <table mat-table [dataSource]="ultimasSolicitudes()" class="tabla">
+    <ng-container matColumnDef="numero">
+      <th mat-header-cell *matHeaderCellDef>Número</th>
+      <td mat-cell *matCellDef="let s">
+        <a [routerLink]="['/solicitudes', s.id]">{{ s.numero }}</a>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="solicitante">
+      <th mat-header-cell *matHeaderCellDef>Solicitante</th>
+      <td mat-cell *matCellDef="let s">{{ s.solicitante }}</td>
+    </ng-container>
+    <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef>Fecha</th>
+      <td mat-cell *matCellDef="let s">{{ s.fecha }}</td>
+    </ng-container>
+    <ng-container matColumnDef="lineaComercial">
+      <th mat-header-cell *matHeaderCellDef>Línea comercial</th>
+      <td mat-cell *matCellDef="let s">{{ s.lineaComercial }}</td>
+    </ng-container>
+    <ng-container matColumnDef="estado">
+      <th mat-header-cell *matHeaderCellDef>Estado</th>
+      <td mat-cell *matCellDef="let s"><app-estado-badge [estado]="s.estado" /></td>
+    </ng-container>
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef>Total</th>
+      <td mat-cell *matCellDef="let s">{{ s.totalGeneral | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnas"></tr>
+  </table>
+} @else {
+  <p class="vacio">Aún no hay solicitudes registradas.</p>
+}
