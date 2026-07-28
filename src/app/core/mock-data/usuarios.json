@@ -20,6 +20,11 @@
     "correo": "Tic.Gerente@progen.com.co"
   },
   {
+    "nivel": "Gerencia",
+    "nombre": "Jorge Betancourt",
+    "correo": "tap.lider@progen.com.co"
+  },
+  {
     "nivel": "Almacen",
     "nombre": "Edgar Sanchez",
     "correo": "Almacen.Jefe@progen.com.co"
