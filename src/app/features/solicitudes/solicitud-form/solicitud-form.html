@@ -30,7 +30,11 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Línea comercial</mat-label>
-        <input matInput formControlName="lineaComercial" placeholder="Ej. Fumigadoras" />
+        <mat-select formControlName="lineaComercial">
+          @for (linea of lineasComerciales; track linea) {
+            <mat-option [value]="linea">{{ linea }}</mat-option>
+          }
+        </mat-select>
         @if (form.controls.lineaComercial.invalid && form.controls.lineaComercial.touched) {
           <mat-error>La línea comercial es obligatoria.</mat-error>
         }

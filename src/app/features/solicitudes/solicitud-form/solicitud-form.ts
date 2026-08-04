@@ -21,7 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router, RouterLink } from '@angular/router';
 import { map, startWith } from 'rxjs/operators';
-import { Bodega, DetalleSolicitud, Producto, SolicitudFormValue, Usuario } from '../../../core/models';
+import { Bodega, DetalleSolicitud, LINEAS_COMERCIALES, Producto, SolicitudFormValue, Usuario } from '../../../core/models';
 import { LoadingService } from '../../../core/services/loading.service';
 import { NotificacionService } from '../../../core/services/notificacion.service';
 import { ProductoService } from '../../../core/services/producto.service';
@@ -77,6 +77,7 @@ export class SolicitudForm {
   private readonly dialog = inject(MatDialog);
 
   protected readonly enviando = signal(false);
+  protected readonly lineasComerciales = LINEAS_COMERCIALES;
   protected readonly bodegas = signal<Bodega[]>([]);
   protected readonly aprobadoresGerencia = signal<Usuario[]>([]);
   protected readonly aprobadoresAlmacen = signal<Usuario[]>([]);

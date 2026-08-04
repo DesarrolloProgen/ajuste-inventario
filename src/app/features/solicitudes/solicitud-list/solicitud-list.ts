@@ -10,7 +10,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router, RouterLink } from '@angular/router';
 import { debounceTime } from 'rxjs/operators';
-import { EstadoSolicitud, Solicitud } from '../../../core/models';
+import { EstadoSolicitud, LINEAS_COMERCIALES, Solicitud } from '../../../core/models';
 import { NotificacionService } from '../../../core/services/notificacion.service';
 import { SolicitudPdfService } from '../../../core/services/solicitud-pdf.service';
 import { FiltrosSolicitud, SolicitudService } from '../../../core/services/solicitud.service';
@@ -43,6 +43,7 @@ export class SolicitudList {
   private readonly fb = inject(FormBuilder);
 
   protected readonly estadosDisponibles = Object.values(EstadoSolicitud);
+  protected readonly lineasComerciales = LINEAS_COMERCIALES;
   protected readonly columnas = ['numero', 'fecha', 'solicitante', 'lineaComercial', 'estado', 'total', 'acciones'];
   protected readonly solicitudes = signal<Solicitud[]>([]);
   protected readonly hayMas = signal(false);
